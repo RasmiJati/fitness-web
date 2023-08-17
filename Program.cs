@@ -13,7 +13,7 @@ namespace fitness
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
-            //telling app to use connection string to connect to sql server
+            //telling application to use connection string to connect to sql server
             builder.Services.AddDbContext<ApplicationDbContext>(Options => Options.UseSqlServer(
                 builder.Configuration.GetConnectionString("DefaultConnection") 
                 ));
