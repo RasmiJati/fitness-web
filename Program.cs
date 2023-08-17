@@ -1,3 +1,7 @@
+using fitness.Data;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+
 namespace fitness
 {
     public class Program
@@ -9,6 +13,11 @@ namespace fitness
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
+            //telling app to use connection string to connect to sql server
+            builder.Services.AddDbContext<ApplicationDbContext>(Options => Options.UseSqlServer(
+                builder.Configuration.GetConnectionString("DefaultConnection") 
+                ));
+            
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
