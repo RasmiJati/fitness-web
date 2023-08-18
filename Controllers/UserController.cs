@@ -1,4 +1,5 @@
 ﻿using fitness.Data;
+using fitness.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace fitness.Controllers
@@ -15,8 +16,9 @@ namespace fitness.Controllers
         }
         public IActionResult Index()
         {
-            var objUserList = _db.Users.ToList();
-            return View();
+            IEnumerable<User> objUserList = _db.Users;  //convert from var to IEnumerbale for strongly typed
+            return View(objUserList);
         }
     }
 }
+ 

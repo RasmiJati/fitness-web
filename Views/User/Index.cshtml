@@ -1,7 +1,23 @@
-﻿
+﻿@model IEnumerable<User>
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Index";                
 }
 
 <h1>User Index</h1>
 
+<table class="table table-bordered table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var obj in Model){
+            <tr>
+                <td width="30%">@obj.name</td>
+                <td width="50%">@obj.email</td>
+            </tr>
+        }
+    </tbody>
+</table>
