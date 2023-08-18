@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\fitness.bundle.scp.css"
     },
     {
+      "Id": "D:\\.net\\web\\fitness\\wwwroot\\css\\BootswatchTheme.css",
+      "PackagePath": "staticwebassets\\css\\BootswatchTheme.css"
+    },
+    {
       "Id": "D:\\.net\\web\\fitness\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

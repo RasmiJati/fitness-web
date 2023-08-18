@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "AOChAnkDt59KnINvipQyajGLJaIE3yx/B7O+NzNVeiQ=",
+  "Hash": "G3WJjJeItWxaxsSErIB/CozbTjMmwunLc40Kk1AHGDg=",
   "Source": "fitness",
   "BasePath": "_content/fitness",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "D:\\.net\\web\\fitness\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\fitness.bundle.scp.css"
+    },
+    {
+      "Identity": "D:\\.net\\web\\fitness\\wwwroot\\css\\BootswatchTheme.css",
+      "SourceId": "fitness",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\.net\\web\\fitness\\wwwroot\\",
+      "BasePath": "_content/fitness",
+      "RelativePath": "css/BootswatchTheme.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\BootswatchTheme.css"
     },
     {
       "Identity": "D:\\.net\\web\\fitness\\wwwroot\\css\\site.css",
