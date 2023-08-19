@@ -15,9 +15,16 @@ namespace fitness
 
             //telling application to use connection string to connect to sql server
             builder.Services.AddDbContext<ApplicationDbContext>(Options => Options.UseSqlServer(
-                builder.Configuration.GetConnectionString("DefaultConnection") 
+                builder.Configuration.GetConnectionString("DefaultConnection")
+                //builder.Configuration.GetConnectionString("DefaultConnection"),
+                //optionsBuilder =>
+                //{
+                //    optionsBuilder.EnableRetryOnFailure();
+                //    optionsBuilder.CommandTimeout(60);
+                //}
                 ));
-            
+            builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

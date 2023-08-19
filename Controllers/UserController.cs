@@ -19,6 +19,22 @@ namespace fitness.Controllers
             IEnumerable<User> objUserList = _db.Users;  //convert from var to IEnumerbale for strongly typed
             return View(objUserList);
         }
+
+        //Get
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        //Post
+        [HttpPost]
+        [ValidateAntiForgeryToken] // prevent the cross site frogery attacks
+        public IActionResult Create(User obj)
+        {
+            _db.Users.Add(obj);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
  
