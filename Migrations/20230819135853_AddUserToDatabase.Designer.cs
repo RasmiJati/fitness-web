@@ -11,7 +11,7 @@ using fitness.Data;
 namespace fitness.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230819122042_AddUserToDatabase")]
+    [Migration("20230819135853_AddUserToDatabase")]
     partial class AddUserToDatabase
     {
         /// <inheritdoc />
