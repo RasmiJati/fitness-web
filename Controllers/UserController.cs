@@ -41,7 +41,7 @@ namespace fitness.Controllers
             {
                 _db.Users.Add(obj);
                 _db.SaveChanges();
-                TempData["success"] = "User created successfully";
+                TempData["success"] = "Successfully Created";
                 return RedirectToAction("Index");
             }
             return View(obj);
@@ -79,7 +79,7 @@ namespace fitness.Controllers
             {
                 _db.Users.Update(obj);
                 _db.SaveChanges();
-                TempData["success"] = "User edited successfully";
+                TempData["success"] = "Successfully Edited ";
                 return RedirectToAction("Index");
             }
             return View(obj);
@@ -112,7 +112,7 @@ namespace fitness.Controllers
             }
                 _db.Users.Remove(obj);
                 _db.SaveChanges();
-                TempData["success"] = "User deleted successfully";
+                TempData["success"] = "Successfully Deleted ";
                 return RedirectToAction("Index");
         }
     }
