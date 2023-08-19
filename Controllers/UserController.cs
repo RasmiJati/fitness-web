@@ -32,7 +32,7 @@ namespace fitness.Controllers
         [ValidateAntiForgeryToken] // prevent the cross site frogery attacks
         public IActionResult Create(User obj)
         {
-            if(obj.name == obj.email)
+            if (obj.name == obj.email)
             {
                 //ModelState.AddModelError("CustomError","Name and email can't be same");
                 ModelState.AddModelError("name", "Name and email can't be same");
@@ -40,6 +40,43 @@ namespace fitness.Controllers
             if (ModelState.IsValid)
             {
                 _db.Users.Add(obj);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(obj);
+        }
+
+
+        public IActionResult Edit(int? id)
+        {
+            if(id==null||id == 0)
+            {
+                return NotFound();
+            }
+            var user = _db.Users.Find(id);
+            //var userFirst=_db.Users.FirstOrDefault(x => x.id == id);
+            //var userSingle = _db.Users.SingleOrDefault(x => x.id == id);
+
+            if(user == null)
+            {
+                return NotFound();
+            }
+            return View(user);
+        }
+
+        //Post
+        [HttpPost]
+        [ValidateAntiForgeryToken] // prevent the cross site frogery attacks
+        public IActionResult Edit(User obj)
+        {
+            if (obj.name == obj.email)
+            {
+                //ModelState.AddModelError("CustomError","Name and email can't be same");
+                ModelState.AddModelError("name", "Name and email can't be same");
+            }
+            if (ModelState.IsValid)
+            {
+                _db.Users.Update(obj);
                 _db.SaveChanges();
                 return RedirectToAction("Index");
             }
