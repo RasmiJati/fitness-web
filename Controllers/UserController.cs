@@ -82,6 +82,36 @@ namespace fitness.Controllers
             }
             return View(obj);
         }
+
+        public IActionResult Delete(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+            var user = _db.Users.Find(id);
+           if (user == null)
+            {
+                return NotFound();
+            }
+            return View(user);
+        }
+
+        //Post
+        [HttpPost,ActionName("Delete")]
+        //[HttpPost]
+        [ValidateAntiForgeryToken] // prevent the cross site frogery attacks
+        public IActionResult DeletePost (int? id)
+        {
+            var obj = _db.Users.Find(id);
+            if (obj == null)
+            {
+                return NotFound();
+            }
+                _db.Users.Remove(obj);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+        }
     }
 }
  
