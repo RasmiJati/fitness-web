@@ -31,9 +31,13 @@ namespace fitness.Controllers
         [ValidateAntiForgeryToken] // prevent the cross site frogery attacks
         public IActionResult Create(User obj)
         {
-            _db.Users.Add(obj);
-            _db.SaveChanges();
-            return RedirectToAction("Index");
+            if(ModelState.IsValid)
+            {
+                _db.Users.Add(obj);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(obj);
         }
     }
 }
