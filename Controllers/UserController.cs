@@ -1,6 +1,7 @@
 ﻿using fitness.Data;
 using fitness.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace fitness.Controllers
 {
@@ -31,7 +32,12 @@ namespace fitness.Controllers
         [ValidateAntiForgeryToken] // prevent the cross site frogery attacks
         public IActionResult Create(User obj)
         {
-            if(ModelState.IsValid)
+            if(obj.name == obj.email)
+            {
+                //ModelState.AddModelError("CustomError","Name and email can't be same");
+                ModelState.AddModelError("name", "Name and email can't be same");
+            }
+            if (ModelState.IsValid)
             {
                 _db.Users.Add(obj);
                 _db.SaveChanges();
